@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Hm what is this??</title>
     <script>
-        // Function to automatically redirect to a given URL in a new window with about:blank first
         window.onload = function() {
-            var targetURL = "https://boltunblocker.com/";  // Replace with the URL you want to redirect to
-            var newWindow = window.open("about:blank", "_blank"); // Open a blank page
-            newWindow.location.href = targetURL;  // Redirect the blank page to the target URL
+            var targetURL = "https://boltunblocker.com/";  // The URL you want to redirect to
+
+            // Open a blank window
+            var newWindow = window.open("about:blank", "_blank");
+
+            // Set a timeout to automatically redirect to the target URL after the window opens
+            setTimeout(function() {
+                newWindow.location.href = targetURL;  // Redirect the blank window to the target URL
+            }, 100);  // Delay of 100ms to ensure the blank window is fully opened
         };
     </script>
 </head>
+<body>
+    <h1>Redirecting to a website...</h1>
+</body>
 </html>
