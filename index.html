@@ -11,14 +11,18 @@
             // Open a blank window
             var newWindow = window.open("about:blank", "_blank");
 
-            // Set a timeout to automatically redirect to the target URL after the window opens
-            setTimeout(function() {
-                newWindow.location.href = targetURL;  // Redirect the blank window to the target URL
-            }, 100);  // Delay of 100ms to ensure the blank window is fully opened
+            // Create an iframe inside the new window
+            var iframe = newWindow.document.createElement('iframe');
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.src = targetURL;  // Set the target URL in the iframe
+
+            // Append the iframe to the new window's body
+            newWindow.document.body.appendChild(iframe);
         };
     </script>
 </head>
 <body>
-    <h1>Redirecting to a website...</h1>
+    <h1>Opening website in a new window...</h1>
 </body>
 </html>
